@@ -1,3 +1,9 @@
+# pdf files
+*.pdf
+
+#temp files
+*~ 
+
 ##### FORTRAN
 # Compiled Object files
 *.slo
