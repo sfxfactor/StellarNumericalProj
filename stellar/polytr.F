@@ -10,7 +10,7 @@ c
       call comrd
       read (5,301) Zmas,Rstar,Teff,XX,YY,Pexp
 c     write(6,201) Zmas,Rstar,Teff,XX,YY,Pexp
- 301  format(7x,1p,e9.2,7x,e9.2,6x,e9.2,3x,0p,f9.6,3x,f9.6,3x,f6.3)
+ 301  format(7x,1p,e9.2,7x,e9.2,6x,e9.2,3x,0p,f9.6,3x,f12.9,3x,f6.3)
  201  format(' Zmass=',1p,e9.2,' Rstar=',e9.2,' Teff=',e9.2,            &
      & ' X=',0p,f9.6,' Y=',f9.6,' E=',f7.4)
       amu = 2. * XX + 0.75 * YY + 0.5 * (1.-XX-YY)

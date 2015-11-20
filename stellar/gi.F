@@ -339,8 +339,8 @@ c     DATA anabcon/3.945322d+09/
      &     RHO,cP,alpha,beta,delta)
         RHOlog=log10(RHO)
         Tlog  =log10(TEMP)
-        call opacity(K,Tlog,RHOlog,bkap) 
-C       bkap = 0.2*(1.0+XX)
+C       call opacity(K,Tlog,RHOlog,bkap) 
+        bkap = 0.2*(1.0+XX)
         xkap=10.d0**bkap
         radnab=anabcon/xMASS*xkap*xLUM*PRES/TEMP**4
         adnab=delta*PRES/(cP*TEMP*RHO)
