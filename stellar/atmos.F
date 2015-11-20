@@ -45,12 +45,14 @@ C
       call invstate(11,Pout,TK0,XX,YY,Crad,RHO,cP,alpha,Rbeta1,delta)
       RHOlog = log10(RHO)
       call opacity(N,Tlog,RHOlog,bkap) 
+C     bkap = 0.2*(1.0+XX)
       AKK = Z10**bkap
       GD  = DELTAU*GRAV*Zat/Rat**2
       PK0 = Pout + GD/AKK
       call invstate(12,PK0,TK0,XX,YY,Crad,RHO,cP,alpha,Rbeta1,delta)
       RHOlog = log10(RHO)
       call opacity(N,Tlog,RHOlog,bkap) 
+C     bkap = 0.2*(1.0+XX)
       AKK = Z10**bkap
       do itr=1,30
         G0 = (PK0-Pout)*AKK - GD
@@ -58,6 +60,7 @@ C
         call invstate(13,PK1,TK0,XX,YY,Crad,RHO,cP,alpha,Rbeta1,delta)
         RHOlog = log10(RHO)
         call opacity(N,Tlog,RHOlog,bkap) 
+C       bkap = 0.2*(1.0+XX)
         AKK = Z10**bkap
         G1 = (PK1-Pout)*AKK - GD
         dGdP=(G0-G1)/(PK0-PK1)
@@ -70,6 +73,7 @@ C
         call invstate(14,PK0,TK0,XX,YY,Crad,RHO,cP,alpha,Rbeta1,delta)
         RHOlog = log10(RHO)
         call opacity(N,Tlog,RHOlog,bkap) 
+C       bkap = 0.2*(1.0+XX)
         AKK = Z10**bkap
         if(itr.gt.2 .and. abs(DELP)/(PK0+PK1) .lt. 1.e-5) goto 3
       enddo
@@ -130,6 +134,7 @@ C
         Tlog   = log10(TM2)
         RHOlog = log10(RHO)
         call opacity(N,Tlog,RHOlog,bkap) 
+C       bkap = 0.2*(1.0+XX)
         AKK = Z10**bkap
         dTAK = DELTAU/AKK
         GD   = dTAK*GRAV*Zat/Rat**2
@@ -151,6 +156,7 @@ C
         Tlog   = log10(TM2)
         RHOlog = log10(RHO)
         call opacity(N,Tlog,RHOlog,bkap) 
+C       bkap = 0.2*(1.0+XX)
         AKK  = Z10**bkap
         dTAK = DELTAU/AKK
         GD   = dTAK*GRAV*Zat/Rat**2
@@ -172,6 +178,7 @@ C
         Tlog   = log10(TM2)
         RHOlog = log10(RHO)
         call opacity(N,Tlog,RHOlog,bkap) 
+C       bkap = 0.2*(1.0+XX)
         AKK  = Z10**bkap
         dTAK = DELTAU/AKK
         GD   = dTAK*GRAV*Zat/Rat**2
@@ -193,6 +200,7 @@ C
         Tlog   = log10(TK0)
         RHOlog = log10(RHO)
         call opacity(N,Tlog,RHOlog,bkap) 
+C       bkap = 0.2*(1.0+XX)
         AKK = Z10**bkap
         call nabla(PK0,Rat,Xlum,TK0,Zat,TPNAB,ADNAB,RADNAB,N,IC)
         PTAU(JK)  = PK0
