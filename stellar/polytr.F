@@ -20,8 +20,8 @@ c     write(6,201) Zmas,Rstar,Teff,XX,YY,Pexp
       kmax=1
       do kkk=1,kmax
         Zmass=Zmas*Zfac
-        A=3.65375/Rstar
-        RHOc=5.99071*3.*Zmass/(PI4*Rstar**3)
+        A=6.89685/Rstar
+        RHOc=54.1825*3.*Zmass/(PI4*Rstar**3)
         zK=PI4*GRAV/(1.+Pexp)*RHOc**(1.-1./Pexp)/A**2
         Pc=zK*RHOc**(1.+1./Pexp)
         write(6,202) RHOc,Pc,A,zK
