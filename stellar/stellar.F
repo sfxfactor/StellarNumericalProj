@@ -114,7 +114,8 @@ C
         tee=sqrt(sqrt(te4))
 c       Znet=1.d0-hydrogen(1)-helium4(1)-helium3(1)-deuterium(1)        &
 c    &      -carbon(1)-trogen(1)-oxygen(1)
-        if(iter.lt.abs(itmax/2)) then
+c       if(iter.lt.abs(itmax/2)) then
+        if(.true.) then
           write (6,200)  MODEL,TIME,DTIME,CHANGE,                       &
      &                 X(1,1),X(1,4),X(N,2),X(N,3),tee,Zmass,Zflux 
 c    &        hydrogen(1),helium4(1),helium3(1),deuterium(1),           &
