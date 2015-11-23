@@ -3,10 +3,11 @@
 #       all stellar polytr lstmod clean realclean install
 .SUFFIXES:
 .SUFFIXES: .out .o .c .e .r .F .f .y .l .s .p .vmsf .for .vmsc .com
-FOR=f95
+#FOR=f95
 #FOR=f90
 #FOR=g77
 #FOR=f77
+FOR=gfortran
 FFLAGS=-O
 CFLAGS=
 #       Flags for generating code for transport to a VMS system
