@@ -23,7 +23,8 @@ C
         Ymax=H1(1)+H1(2)
       endif
       Prad=Crad*Arad3*Temp**4
-      Pgas=Pr-Prad
+c     Pgas=Pr-Prad
+      Pgas=0.1*Pr
       if(Pgas.lt.0.d0) then
         write(6,'(a,i3,a)') 'INVSTATE',im,': Gas pressure is negative'
         write(6,'(i4,1x,a,1p,4e12.4)')                                  &
@@ -33,8 +34,10 @@ C
         Pgas = 0.01*Pr
         Prad = 0.99*Pr
       endif
-      Rbeta=Pgas/Pr
-      Rbeta1=Prad/Pr
+c     Rbeta=Pgas/Pr
+c     Rbeta1=Prad/Pr
+      Rbeta=0.1
+      Rbeta1=0.9
       i1=0
 c
       Plog=log10(Pgas)
