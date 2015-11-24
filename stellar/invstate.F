@@ -24,7 +24,8 @@ C
       endif
       Prad=Crad*Arad3*Temp**4
 c     Pgas=Pr-Prad
-      Pgas=0.1*Pr
+c     KW^2 19.56 B~0.6
+      Pgas=0.6*Pr
       if(Pgas.lt.0.d0) then
         write(6,'(a,i3,a)') 'INVSTATE',im,': Gas pressure is negative'
         write(6,'(i4,1x,a,1p,4e12.4)')                                  &
@@ -36,8 +37,8 @@ c     Pgas=Pr-Prad
       endif
 c     Rbeta=Pgas/Pr
 c     Rbeta1=Prad/Pr
-      Rbeta=0.1
-      Rbeta1=0.9
+      Rbeta=0.6
+      Rbeta1=0.4
       i1=0
 c
       Plog=log10(Pgas)

@@ -10,6 +10,7 @@ Z = np.array([1e-9,0.02])
 R1 = 10.*Rsun*((M/370.)*((Z[0]/1e-9)**0.2))**(1./2.2)
 print "M [Msun] = ", M[0]
 print "R [Rsun] = ", R1[0]/Rsun
+print "R [cm] = ", R1[0]
 R2 = 10.*Rsun*((M/370.)*((Z[1]/1e-9)**0.2))**(1./2.2)
 Ledd = 1.25e38*M
 print "L [erg s^-1] = ", Ledd[0]
