@@ -41,7 +41,7 @@
 *         10 then full henyey corrections are NOT made.
 *  ITMX   maximum number of iterations in "henyey".  IF ITMX < 0,
 *         then detailed information for each iteration is printed.
- MODA=     0 NMOD=   100 NRIT=    50 ITMN=     2 ITMX=   200
+ MODA=     0 NMOD=   100 NRIT=    50 ITMN=     2 ITMX=   500
 *
 *  JADD   if JADD > 0, then a grid cell is added after the j-th grid
 *         point before proceeding with the calculations.
@@ -137,10 +137,10 @@
 *  Whenever the deuterium abundance is set to a negative value,
 *  the deuterium abundance is not updated after each time step.
 *
-       7.60E-01      -4.00E-18       3.33E-09       2.72E-18
+       7.60E-01      -4.00E-05       3.33E-10       2.72E-18
        5.02E-18       4.53E-18       5.53E-18       3.84E-18
-       3.32E-18       5.69E-18       9.39E-18       3.33E-09
-       3.33E-09       1.65E-18
+       3.32E-18       5.69E-18       9.39E-18       3.33E-10
+       3.33E-10       1.65E-18
 *
 *  The following pairs of numbers denote a table of mass fluxes at
 *  specified times.  Up to 10 entries in the table (this number can be
