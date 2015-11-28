@@ -61,7 +61,7 @@
 *  dTAX   is the maximum relative DELTAU in "atmos" normalized by TAU.
 *  L/H    is the ratio of mixing length to pressure scale height.
 *
- Atmx= 2.00E+05 Atmn= 1.00E+04 dTAX= 1.00E-05 L/H = 2.00E-00
+ Atmx= 2.00E+07 Atmn= 1.00E+05 dTAX= 1.00E-05 L/H = 2.00E-00
 *
 *  dLmx   and
 *  dLmn   designate the maximum and minimum jumps in luminosity
