@@ -47,7 +47,7 @@ C
 C     call opacity(N,Tlog,RHOlog,bkap) 
 C     AKK = Z10**bkap
 C     AKK = 0.2*(1.0+XX)
-      AKK = Z1/((Z1/(0.2*(Z1+XX)))+(Z1/((Z1-XX-YY)*RHO**Z05*TK0**9)))
+      AKK = Z1/((Z1/(0.2*(Z1+XX)))+(Z1/(1E-09*RHO**Z05*TK0**9)))
       GD  = DELTAU*GRAV*Zat/Rat**2
       PK0 = Pout + GD/AKK
       call invstate(12,PK0,TK0,XX,YY,Crad,RHO,cP,alpha,Rbeta1,delta)
@@ -55,7 +55,7 @@ C     AKK = 0.2*(1.0+XX)
 C     call opacity(N,Tlog,RHOlog,bkap) 
 C     AKK = Z10**bkap
 C     AKK = 0.2*(1.0+XX)
-      AKK = Z1/((Z1/(0.2*(Z1+XX)))+(Z1/((Z1-XX-YY)*RHO**Z05*TK0**9)))
+      AKK = Z1/((Z1/(0.2*(Z1+XX)))+(Z1/(1E-09*RHO**Z05*TK0**9)))
       do itr=1,30
         G0 = (PK0-Pout)*AKK - GD
         PK1=PK0*1.001d0
@@ -64,7 +64,7 @@ C     AKK = 0.2*(1.0+XX)
 C       call opacity(N,Tlog,RHOlog,bkap) 
 C       AKK = Z10**bkap
 C       AKK = 0.2*(1.0+XX)
-        AKK = Z1/((Z1/(0.2*(Z1+XX)))+(Z1/((Z1-XX-YY)*RHO**0.5*TK0**9)))
+        AKK = Z1/((Z1/(0.2*(Z1+XX)))+(Z1/(1E-09*RHO**0.5*TK0**9)))
         G1 = (PK1-Pout)*AKK - GD
         dGdP=(G0-G1)/(PK0-PK1)
         DELP = -G0/dGdP
@@ -78,7 +78,7 @@ C       AKK = 0.2*(1.0+XX)
 C       call opacity(N,Tlog,RHOlog,bkap) 
 C       AKK = Z10**bkap
 C       AKK = 0.2*(1.0+XX)
-        AKK = Z1/((Z1/(0.2*(Z1+XX)))+(Z1/((Z1-XX-YY)*RHO**0.5*TK0**9)))
+        AKK = Z1/((Z1/(0.2*(Z1+XX)))+(Z1/(1E-09*RHO**0.5*TK0**9)))
         if(itr.gt.2 .and. abs(DELP)/(PK0+PK1) .lt. 1.e-5) goto 3
       enddo
  3    continue
@@ -140,7 +140,7 @@ C
 C       call opacity(N,Tlog,RHOlog,bkap) 
 C       AKK = Z10**bkap
 C       AKK = 0.2*(1.0+XX)
-        AKK = Z1/((Z1/(0.2*(Z1+XX)))+(Z1/((Z1-XX-YY)*RHO**0.5*TK0**9)))
+        AKK = Z1/((Z1/(0.2*(Z1+XX)))+(Z1/(1E-09*RHO**0.5*TK0**9)))
         dTAK = DELTAU/AKK
         GD   = dTAK*GRAV*Zat/Rat**2
         dPK2 = GD
@@ -163,7 +163,7 @@ C
 C       call opacity(N,Tlog,RHOlog,bkap) 
 C       AKK  = Z10**bkap
 C       AKK = 0.2*(1.0+XX)
-        AKK = Z1/((Z1/(0.2*(Z1+XX)))+(Z1/((Z1-XX-YY)*RHO**0.5*TK0**9)))
+        AKK = Z1/((Z1/(0.2*(Z1+XX)))+(Z1/(1E-09*RHO**0.5*TK0**9)))
         dTAK = DELTAU/AKK
         GD   = dTAK*GRAV*Zat/Rat**2
         dPK3 = GD
@@ -186,7 +186,7 @@ C
 C       call opacity(N,Tlog,RHOlog,bkap) 
 C       AKK  = Z10**bkap
 C       AKK = 0.2*(1.0+XX)
-        AKK = Z1/((Z1/(0.2*(Z1+XX)))+(Z1/((Z1-XX-YY)*RHO**0.5*TK0**9)))
+        AKK = Z1/((Z1/(0.2*(Z1+XX)))+(Z1/(1E-09*RHO**0.5*TK0**9)))
         dTAK = DELTAU/AKK
         GD   = dTAK*GRAV*Zat/Rat**2
         dPK4 = GD
@@ -209,8 +209,7 @@ C
 C       call opacity(N,Tlog,RHOlog,bkap) 
 C       AKK = Z10**bkap
 C       AKK = 0.2*(1.0+XX)
-        AKK = Z1/((Z1/(0.2*(Z1+XX)))+(Z1/((Z1-XX-YY)*RHO**0.5*TK0**9)))
-        print *,'opacity',AKK
+        AKK = Z1/((Z1/(0.2*(Z1+XX)))+(Z1/(1E-09*RHO**0.5*TK0**9)))
         call nabla(PK0,Rat,Xlum,TK0,Zat,TPNAB,ADNAB,RADNAB,N,IC)
         PTAU(JK)  = PK0
         RTAU(JK)  = RK0

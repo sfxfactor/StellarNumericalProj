@@ -4,6 +4,7 @@ import polytrope as poly
 import scipy.interpolate as intp
 from astropy.io import fits
 import sys
+from scipy.optimize import minimize
 
 #argument to plots.py is the index of the polytrope
 n = float(sys.argv[1])
@@ -79,8 +80,29 @@ plt.clf()
 
 #constants
 a = 7.56591e-15
-B=0.5
+kb = 1.38e-16
+mh = 1.674e-24
+mu = 1./(2.*0.76+(3./4.)*0.26)
+print mu
 
+#def eos(T):
+#    m=p*kb*T/(mu*mh)+(a/3.)*T**4-P
+#    return m
+#
+#T0 = np.logspace(np.log10(1.9e8),np.log10(1.1e5),np.size(p))
+#print np.shape(T0)
+#res = minimize(eos,T0)
+
+B=0.582814
+T=((1.-B)*P*3./a)**0.25
+
+plt.plot(menc/Msun,T)
+plt.xlabel(r"$m$ [M$_\odot$]")
+plt.ylabel(r"$T$ [K]")
+plt.savefig("temperature"+sn+'.pdf')
+plt.clf()
+
+B=0.5
 #temperature from eq 19.22
 T=(((1.-B)*3.*P)/a)**0.25
 plt.plot(menc/Msun,np.log10(T))
