@@ -1,0 +1,13 @@
+\begin{thebibliography}{2}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[{{Bromm} {et~al.}(2001){Bromm}, {Kudritzki}, \& {Loeb}}]{BKL}
+{Bromm}, V., {Kudritzki}, R.~P., \& {Loeb}, A. 2001, \apj, 552, 464
+
+\bibitem[{{Heger} {et~al.}(2003){Heger}, {Woosley}, {Fryer}, \&
+  {Langer}}]{pop3}
+{Heger}, A., {Woosley}, S.~E., {Fryer}, C.~L., \& {Langer}, N. 2003, in From
+  Twilight to Highlight: The Physics of Supernovae, ed. W.~{Hillebrandt} \&
+  B.~{Leibundgut}, 3--540
+
+\end{thebibliography}
